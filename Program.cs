@@ -5,12 +5,11 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to AddressBoook");
-            //Person person1= new Person("name", "address", "city", "state", "zipCode", "phoneNum");
-            Console.WriteLine("Enter initial num of Address");
+            Console.WriteLine("Enter Number of Contacts you want to enter");
             int n =Convert.ToInt32(Console.ReadLine());
             Person.addList(n);
+            Person.addNewContact("name","address","city","state","zipCode","phoneNum");
             Person.printList();
-        }   
-           
+        }         
     }
 }

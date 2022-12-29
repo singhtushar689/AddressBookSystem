@@ -30,7 +30,21 @@ namespace AddressBookSystem
             this.zipCode = zipCode;
             this.email = email;
         }
+
+        public Person(string name, string address, string city, string state, string zipCode, string phoneNum)
+        {
+            this.name = name;
+            this.address = address;
+            this.city = city;
+            this.state = state;
+            this.zipCode = zipCode;
+            this.phoneNum = phoneNum;
+        }
+
         private static List<Person> personList = new List<Person>();
+        private string name;
+        private string phoneNum;
+
         public static void addList(int n)
         {
             for (int i = 0; i < n; i++)
@@ -51,14 +65,18 @@ namespace AddressBookSystem
                 string zipCode = Console.ReadLine();
                 Console.WriteLine("Enter the E-mail");
                 string email = Console.ReadLine();
-
             }
+        }
+        public static void addNewContact(string name, string address, string city, string state, string zipCode, string phoneNum)
+        {
+            Person addressList = new Person(name, address, city, state, zipCode, phoneNum);
+            personList.Add(addressList);
         }
         public static void printList()
         {
             for (int i = 0; i < personList.Count; i++)
             {
-                Console.WriteLine("dirstName-" + personList[i].firstName);
+                Console.WriteLine("firstName" + personList[i].firstName);
                 Console.WriteLine("lastName" + personList[i].lastName);
                 Console.WriteLine("Address" + personList[i].address);
                 Console.WriteLine("PhoneNumber" + personList[i].phoneNumber);
