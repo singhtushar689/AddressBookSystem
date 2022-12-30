@@ -15,10 +15,11 @@
         {
             Console.WriteLine("Hello World");
             bool flag = true;
+            AddressBook addressBook= new AddressBook();
             while(flag)
             {
                 Console.WriteLine("Welcome to AddressBook");
-                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Exit");
+                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Edit Contacts \n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -56,6 +57,13 @@
                         addressbook.Display();
                         break;
                     case 3:
+                        Console.WriteLine("Enter the Contact Name to  Edit: ");
+                        string name = Console.ReadLine();
+                        addressBook.EditContact(name);
+                        Console.WriteLine("Contact is Edited Sucsessfully");
+                        addressBook.Display();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
