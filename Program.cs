@@ -19,7 +19,7 @@
             while(flag)
             {
                 Console.WriteLine("Welcome to AddressBook");
-                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Edit Contacts \n4.Exit");
+                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Edit Contacts \n4.Delete Contact \n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -64,8 +64,19 @@
                         addressBook.Display();
                         break;
                     case 4:
+                        Console.WriteLine("Enter the contact you want to delete :");
+                        string detail = Console.ReadLine();
+                        //  Contact cont = new Contact();
+                        AddressBook delete = new AddressBook();
+
+                        delete.DeleteContact(detail);
+                        delete.Display();
                         flag = false;
                         break;
+                    case 5:
+                        flag = false;
+                        break;
+
                 }
             }
         }         
