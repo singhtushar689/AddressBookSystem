@@ -19,7 +19,7 @@
             while(flag)
             {
                 Console.WriteLine("Welcome to AddressBook");
-                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Edit Contacts \n4.Delete Contact \n5.Exit");
+                Console.WriteLine("Choose options given below: \n1. Create Contacts \n2. Add New Contact \n3.Edit Contacts \n4. Delete Contact \n5 Add Multiple Contacts \n6. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -74,6 +74,23 @@
                         flag = false;
                         break;
                     case 5:
+                        Console.WriteLine("Enter the Contact Information to Add, in form of FirstName, LastName, Addr, City, State, Zip, Ph.No, Email.");
+                        contact = new Contact()
+                        {
+                            FirstName = Console.ReadLine(),
+                            LastName = Console.ReadLine(),
+                            Address = Console.ReadLine(),
+                            City = Console.ReadLine(),
+                            State = Console.ReadLine(),
+                            ZipCode = Console.ReadLine(),
+                            MobileNumber = Console.ReadLine(),
+                            Email = Console.ReadLine(),
+                        };
+                        addressBook.AddContact(contact);
+                        Console.WriteLine("Contact is Saved");
+                        addressBook.Display();
+                        break;
+                    case 6:
                         flag = false;
                         break;
 
